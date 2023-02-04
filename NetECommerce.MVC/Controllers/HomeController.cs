@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NetECommerce.BLL.AbstractService;
+using NetECommerce.BLL.Service;
 using NetECommerce.Entity.Entity;
 using NetECommerce.MVC.Models;
 using System;
@@ -14,15 +15,18 @@ namespace NetECommerce.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly IProductService productService;
+        private readonly ICategoryService categoryService;
 
-        public HomeController(IProductService productService)
+        public HomeController(IProductService productService,ICategoryService categoryService)
         {
             this.productService = productService;
+            this.categoryService = categoryService;
         }
 
         public IActionResult Index()
         {
-
+            TempData["deneme"] = "format uymuyor!";
+            TempData["kategoriler"]=categoryService.GetAllCategorys();
       
             return View(productService.GetAllProducts().ToList());
         }

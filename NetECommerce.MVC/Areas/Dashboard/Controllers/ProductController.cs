@@ -25,6 +25,7 @@ namespace NetECommerce.MVC.Areas.Dashboard.Controllers
 
         public IActionResult Index()
         {
+           
             return View(_productService.GetAllProducts().ToList());
         }
 
