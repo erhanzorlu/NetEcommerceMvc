@@ -10,9 +10,12 @@ namespace NetECommerce.MVC.Areas.Dashboard.Controllers
     {
         decimal fiyat = 0;
         private  IProductService _productService;
-        public HomeController(IProductService productService)
+        private  ICategoryService _categoryService;
+
+        public HomeController(IProductService productService,ICategoryService categoryService)
         {
             _productService = productService;
+            _categoryService = categoryService;
         }
         public IActionResult Index()
         {
@@ -21,7 +24,7 @@ namespace NetECommerce.MVC.Areas.Dashboard.Controllers
             {
                 fiyat += item.UnitPrice;
             }
-
+            ViewBag.toplamKategori=_categoryService.GetAllCategorys().Count();
             ViewBag.toplamUrun = _productService.GetAllProducts().Count();
             ViewBag.toplamFiyat = fiyat;
             return View();

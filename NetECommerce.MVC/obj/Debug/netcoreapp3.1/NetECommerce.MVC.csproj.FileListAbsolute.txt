@@ -347,3 +347,4 @@ C:\Users\zorlu\source\repos\Yeni klasör\30.01\NetECommerce\NetECommerce.MVC\obj
 C:\Users\zorlu\source\repos\Yeni klasör\30.01\NetECommerce\NetECommerce.MVC\obj\Debug\netcoreapp3.1\NetECommerce.MVC.pdb
 C:\Users\zorlu\source\repos\Yeni klasör\30.01\NetECommerce\NetECommerce.MVC\obj\Debug\netcoreapp3.1\NetECommerce.MVC.genruntimeconfig.cache
 C:\Users\zorlu\source\repos\Yeni klasör\30.01\NetECommerce\NetECommerce.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\zorlu\source\repos\Yeni klasör\30.01\NetECommerce\NetECommerce.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Product\Update.cshtml.g.cs

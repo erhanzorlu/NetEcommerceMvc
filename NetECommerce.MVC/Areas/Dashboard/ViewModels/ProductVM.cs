@@ -20,6 +20,7 @@ namespace NetECommerce.MVC.Areas.Dashboard.ViewModels
         [Required(ErrorMessage = "Ürün adı pleasee")]
         public string? ImagePath { get; set; }
 
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
     }
 }

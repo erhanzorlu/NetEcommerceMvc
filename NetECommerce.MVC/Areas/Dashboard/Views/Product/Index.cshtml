@@ -47,7 +47,7 @@
                         {
                             <tr>
                             <td>
-                            <img src="~/images/product/@product.ImagePath" style="width:100px;height:100px"/>
+                            <img src="@product.ImagePath" style="width:100px;height:100px"/>
                             </td>
                                 <td>@product.Id</td>
                                 <td>@product.ProductName</td>
@@ -75,7 +75,14 @@
                                 </td>
                                 <td>@product.UnitPrice</td>
                                 <td>@product.UnitsInStock</td>
-                                <td>Buraya Kategori Gelecek</td>
+                                <td>@foreach (var item in ViewBag.kategoriler)
+                                    {
+                                        if (product.CategoryId == @item.Id)
+                                        {
+                                            @item.CategoryName
+                                        }
+                                       
+                                    }</td>
                                  <td>
                               <a class="btn btn-sm btn-warning" asp-action="Update" asp-asp-controller="Product" asp-route-id="@product.Id">Update</a> 
                         |

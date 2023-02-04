@@ -74,6 +74,7 @@ namespace NetECommerce.BLL.Concrete
         public string Update(T entity)
         {
             string result = "";
+            entity.Status= Entity.Enum.Status.Updated;
             try
             {
                 switch (entity.Status)

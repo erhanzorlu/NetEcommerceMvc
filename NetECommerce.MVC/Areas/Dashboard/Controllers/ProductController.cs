@@ -25,7 +25,7 @@ namespace NetECommerce.MVC.Areas.Dashboard.Controllers
 
         public IActionResult Index()
         {
-           
+            ViewBag.kategoriler = _categoryService.GetAllCategorys().ToList();
             return View(_productService.GetAllProducts().ToList());
         }
 
@@ -110,6 +110,40 @@ namespace NetECommerce.MVC.Areas.Dashboard.Controllers
            TempData["result"]= _productService.CreateProduct(product);
 
             return RedirectToAction("Index");
+        }
+        public IActionResult Delete(int id)
+        {
+
+            var deleted = _productService.FindProduct(id);
+
+            if (deleted != null)
+            {
+                TempData["result"] = _productService.DeleteProduct(deleted);
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
+        public IActionResult Update(int id)
+        {
+            ViewBag.Categories = _categoryService.GetAllCategorys().Select(x => new SelectListItem()
+            {
+                Text = x.CategoryName,
+                Value = x.Id.ToString()
+
+
+            });
+            var updated = _productService.FindProduct(id);
+            return View(updated);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Product product)
+        {
+            
+            TempData["result"] = _productService.UpdateProduct(product);
+            return RedirectToAction("Index");
+
         }
     }
 }

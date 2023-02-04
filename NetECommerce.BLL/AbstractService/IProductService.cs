@@ -14,5 +14,6 @@ namespace NetECommerce.BLL.AbstractService
         string DeleteProduct(Product product);
 
         string UpdateProduct(Product product);
+        Product FindProduct(int id);
     }
 }

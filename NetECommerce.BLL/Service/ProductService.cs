@@ -60,5 +60,9 @@ namespace NetECommerce.BLL.Service
                 return ex.Message;
             }
         }
+        public Product FindProduct(int id)
+        {
+            return _productRepository.GetById(id);
+        }
     }
 }
